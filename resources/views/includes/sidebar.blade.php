@@ -56,14 +56,195 @@
                   <p>Dashboard v2</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
+
+          <!--    Product section -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Products
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+
+
+
+              </ul>
+          </li>
+
+            <!--     /product section          -->
+
+
+
+            <!-- Units section -->
+
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Units
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+                    <!-- Units pages  -->
+              
+            <li class="nav-item">
+                <a href="{{ route('unit.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Units</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
+                <a href="{{ route('unit.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Unit</p>
+                </a>
+              </li>
+
+            <!-- /Units pages -->    
+
+
+              </ul>
+          </li>
+
+
+            <!-- /Units section -->
+
+
+
+            <!-- Brands section -->
+
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Brands
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+        <!--       Brand pages     -->
+
+        <li class="nav-item">
+                <a href="{{ route('brand.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Brands</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
+                <a href="{{ route('brand.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Brand</p>
+                </a>
+              </li>
+
+            <!--       /Brand pages -->
+
+
+              </ul>
+          </li>
+
+          <!-- /brands section -->
+
+
+            <!-- Categories section -->
+
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Categories
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+           <!--        Category pages -->
+
+           <li class="nav-item">
+                <a href="{{ route('category.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Categories</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
+                <a href="{{ route('category.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Category</p>
+                </a>
+              </li>
+
+            
+            <!--        /Category pages -->
+
+
+              </ul>
+          </li>
+
+            <!-- /Categories section -->
+
+
+
+
+         <!-- Address section -->
+
+         <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Address
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+          <!--        Address pages -->
+
+          <li class="nav-item">
+                <a href="{{ route('address.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Addresses</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
+                <a href="{{ route('address.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Address</p>
+                </a>
+              </li>
+
+            
+            <!--        /Address pages -->
+              </ul>
+          </li>
+
+            <!-- /Address section -->
+
+
+
+
           <li class="nav-item">
             <a href="{{asset('Assets/pages/widgets.html')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -241,83 +422,17 @@
 
             <ul class="nav nav-treeview">
 
-               <!-- Units pages  -->
-              
-            <li class="nav-item">
-                <a href="{{ route('unit.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All Units</p>
-                </a>
-              </li>
-
-            <li class="nav-item">
-                <a href="{{ route('unit.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Unit</p>
-                </a>
-              </li>
-
-            <!-- /Units pages -->    
+             
             
             
 
-            <!--       Brand pages     -->
-
-            <li class="nav-item">
-                <a href="{{ route('brand.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All Brands</p>
-                </a>
-              </li>
-
-            <li class="nav-item">
-                <a href="{{ route('brand.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Brand</p>
-                </a>
-              </li>
-
-            <!--       /Brand pages -->
+            
 
             
-            <!--        Category pages -->
-
-            <li class="nav-item">
-                <a href="{{ route('category.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All Categories</p>
-                </a>
-              </li>
-
-            <li class="nav-item">
-                <a href="{{ route('category.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Category</p>
-                </a>
-              </li>
-
-            
-            <!--        /Category pages -->
+           
 
 
-            <!--        Address pages -->
-
-            <li class="nav-item">
-                <a href="{{ route('address.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All Addresses</p>
-                </a>
-              </li>
-
-            <li class="nav-item">
-                <a href="{{ route('address.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Address</p>
-                </a>
-              </li>
-
-            
-            <!--        /Address pages -->
+          
 
 
               <li class="nav-item">
