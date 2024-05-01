@@ -13,24 +13,78 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name of the Product</label>
-                    <input  class="form-control" id="exampleInputEmail1" placeholder="Name">
+                    <input name="Name" class="form-control" id="exampleInputEmail1" placeholder="Name">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Price</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Price">
+                    <input name="Price" type="number" class="form-control" id="exampleInputPassword1" placeholder="Price">
                   </div>
 
                  
                   <div class="form-group">
                     <label for="exampleInputEmail1">Quantity of the Product</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Quantity">
+                    <input name="Quantity" type="number" class="form-control" id="exampleInputEmail1" placeholder="Quantity">
                   </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
+              
+
+                <div class="col-sm-2">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Brand</label>
+                        <select name="brand_id" type="text" class="form-control">
+                        @foreach ($brands as $brand)
+                          <option>{{$brand -> Name}}</option>
+                        @endforeach
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Category</label>
+                        <select name="category_id" type="text" class="form-control">
+                        @foreach ($categories as $category)
+                          <option>{{$category -> Name}}</option>
+                        @endforeach
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Unit</label>
+                        <select name="unit_id" type="text" class="form-control">
+                        @foreach ($units as $unit)
+                          <option>{{$unit -> Name}}</option>
+                        @endforeach
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Vendor</label>
+                        <select name="vendor_id" type="text" class="form-control">
+
+                        <!-- meant to be vendor -->
+                        @foreach ($units as $unit) 
+                          <option>{{$unit -> Name}}</option>
+                        @endforeach
+                          
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+
               </form>
             </div>
             <!-- /.card -->
