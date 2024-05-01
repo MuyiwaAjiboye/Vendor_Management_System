@@ -244,6 +244,43 @@
 
 
 
+      <!-- Vendor section -->
+
+      <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              
+              <p>
+                Vendor
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+          <!--        Vendor pages -->
+
+          <li class="nav-item">
+                <a href="{{ route('vendor.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Vendors</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
+                <a href="{{ route('vendor.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Vendor</p>
+                </a>
+              </li>
+
+            
+            <!--        /Vendor pages -->
+              </ul>
+          </li>
+
+            <!-- /Vendor section -->
+
 
           <li class="nav-item">
             <a href="{{asset('Assets/pages/widgets.html')}}" class="nav-link">

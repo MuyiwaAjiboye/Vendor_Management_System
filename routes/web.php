@@ -63,5 +63,13 @@ Route::get('/editAddress/{address}', [AddressController::class, 'Edit'])->name('
 Route::put('/updateAddress/{addresses}', [AddressController::class, 'Update'])->name('address.update');
 Route::delete('/deleteAddress/{addresses}', [AddressController::class, 'Delete'])->name('address.delete');
 
+// Vendor route 
+Route::get('/vendor', [VendorController::class, 'Index'])->name('vendor.index');
+Route::get('/createVendorPage', [VendorController::class, 'Create'])->name('vendor.create');
+Route::post('/createNewVendor', [VendorController::class, 'Store'])->name('vendor.store');
+Route::get('/editVendor/{vendor}', [VendorController::class, 'Edit'])->name('vendor.edit');
+Route::put('/updateVendor/{vendors}', [VendorController::class, 'Update'])->name('vendor.update');
+Route::delete('/deleteVendor/{vendors}', [VendorController::class, 'Delete'])->name('vendor.delete');
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
