@@ -29,7 +29,6 @@
                       <th>Company</th>
                       <th>Email</th>
                       <th>Number</th>
-                      <th>Password</th>
                       <th>Product Name</th>
                       <th>Company Adddress</th>
                       <th colspan="2">Action</th>

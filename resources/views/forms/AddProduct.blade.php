@@ -9,7 +9,7 @@
               <!-- /.card-header -->
               <!-- form start -->
 
-              <form  action="" method="post">
+              <form  action="{{route('product.store')}}" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name of the Product</label>
@@ -73,8 +73,8 @@
                         <select name="vendor_id" type="text" class="form-control">
 
                         <!-- meant to be vendor -->
-                        @foreach ($units as $unit) 
-                          <option>{{$unit -> Name}}</option>
+                        @foreach ($vendors as $vendor) 
+                          <option>{{$vendor -> CompanyName}}</option>
                         @endforeach
                           
                         </select>

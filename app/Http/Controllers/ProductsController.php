@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\brand;
+use App\Models\Address;
+use App\Models\Category;
+use App\Models\Vendors;
+
 class ProductsController extends Controller
 {
     public function Index()
@@ -20,7 +25,13 @@ class ProductsController extends Controller
      */
     public function Create()
     {
-        return view('forms.AddProduct');
+        
+        $brands = brand::get();
+        $categories = Category::get();
+        $addresses = Address::get();
+        $vendors = Vendors::get();
+        
+        return view('forms.AddProduct' , ['vendors' => $vendors], ['addresses' => $addresses], ['categories' => $categories], ['brands' => $brands]);
 
     }
 

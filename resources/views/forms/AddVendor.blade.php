@@ -9,7 +9,7 @@
               <!-- /.card-header -->
               <!-- form start -->
 
-              <form  action="" method="post">
+              <form  action="{{route('vendor.store')}}" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name of the Vendor</label>
@@ -41,8 +41,8 @@
                       <div class="form-group">
                         <label>Select Product</label>
                         <select name="product_id" type="text" class="form-control">
-                        @foreach ($brands as $brand)
-                          <option>{{$brand -> Name}}</option>
+                        @foreach ($products as $product)
+                          <option>{{$product -> Name}}</option>
                         @endforeach
                         </select>
                       </div>

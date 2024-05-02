@@ -40,7 +40,7 @@
                         <option>{{$vendor -> product_id}}</option>
                         @foreach ($products as $product)
                         
-                          <option>{{$product -> product}}</option>
+                          <option>{{$product -> Name}}</option>
                         @endforeach
                         </select>
                       </div>

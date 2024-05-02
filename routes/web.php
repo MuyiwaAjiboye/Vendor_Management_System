@@ -6,6 +6,9 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\VendorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +30,14 @@ Auth::routes();
 // dashboard routes
 Route::get('/home', [HomeController::class, 'index'])->name('page.home1');
 Route::get('/home2', [HomeController::class, 'index2'])->name('page.home2');
+
+// Products route
+Route::get('/product', [ProductsController::class, 'Index'])->name('product.index');
+Route::get('/createProductPage', [ProductsController::class, 'Create'])->name('product.create');
+Route::post('/createNewProduct', [ProductsController::class, 'Store'])->name('product.store');
+Route::get('/editProduct/{product}', [ProductsController::class, 'Edit'])->name('product.edit');
+Route::put('/updateProduct/{products}', [ProductsController::class, 'Update'])->name('product.update');
+Route::delete('/deleteProduct/{products}', [ProductsController::class, 'Delete'])->name('product.delete');
 
 
 

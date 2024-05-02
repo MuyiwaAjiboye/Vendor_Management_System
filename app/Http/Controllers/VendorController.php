@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vendors;
+use App\Models\Products;
+use App\Models\Address;
+
 class VendorController extends Controller
 {
     public function Index()
     {
         $vendors = Vendors::get();
+       
+        
         return view('forms.AllAddresses', ['vendors' => $vendors]);
 
     }
@@ -20,7 +25,9 @@ class VendorController extends Controller
      */
     public function Create()
     {
-        return view('forms.AddVendor');
+        $products = Products::get();
+        $addresses = Address::get();
+        return view('forms.AddVendor',['products' => $products], ['addresses' => $addresses]);
 
     }
 
@@ -37,7 +44,7 @@ class VendorController extends Controller
             'Email' =>'required|String',
             'Number' => 'required|integer',
             'password' => 'required|password',
-            'product_id' => 'required|String',
+            'product_id' => 'nullable|String',
             'address_id' => 'required|String'
 
 
