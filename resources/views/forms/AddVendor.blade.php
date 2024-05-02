@@ -2,7 +2,8 @@
 @section('content')
 
 
-    
+<div class="card card-primary">
+<div class="card-header">    
 <!-- <div class="card-header"> -->
 <h3 class="card-title">Vendor</h3>
               </div>
@@ -41,6 +42,7 @@
                       <div class="form-group">
                         <label>Select Product</label>
                         <select name="product_id" type="text" class="form-control">
+                        <option disabled selected>--</option>
                         @foreach ($products as $product)
                           <option>{{$product -> Name}}</option>
                         @endforeach
@@ -53,6 +55,7 @@
                       <div class="form-group">
                         <label>Select Address</label>
                         <select name="address_id" type="text" class="form-control">
+                        <option disabled >--</option>
                         @foreach ($addresses as $address)
                           <option>{{$address -> Address}}</option>
                         @endforeach

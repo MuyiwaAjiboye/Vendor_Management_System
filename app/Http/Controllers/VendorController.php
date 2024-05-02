@@ -27,7 +27,7 @@ class VendorController extends Controller
     {
         $products = Products::get();
         $addresses = Address::get();
-        return view('forms.AddVendor',['products' => $products], ['addresses' => $addresses]);
+        return view('forms.AddVendor',['products' => $products,'addresses' => $addresses]);
 
     }
 
@@ -44,8 +44,8 @@ class VendorController extends Controller
             'Email' =>'required|String',
             'Number' => 'required|integer',
             'password' => 'required|password',
-            'product_id' => 'nullable|String',
-            'address_id' => 'required|String'
+            'product_id' => 'nullable|String|not_in:0',
+            'address_id' => 'required|String|not_in:0'
 
 
 
@@ -83,8 +83,8 @@ class VendorController extends Controller
             'Email' =>'required|String',
             'Number' => 'required|integer',
             'password' => 'required|password',
-            'product_id' => 'required|String',
-            'Address_id' => 'required|String'
+            'product_id' => 'nullable|String|not_in:0',
+            'address_id' => 'required|String|not_in:0'
         ]);     
 
         $vendors -> update($data);

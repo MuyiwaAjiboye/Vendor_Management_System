@@ -2,7 +2,8 @@
 @section('content')
 
 
-    
+<div class="card card-primary">
+<div class="card-header">  
 <!-- <div class="card-header"> -->
 <h3 class="card-title">Create A Product</h3>
               </div>
@@ -10,6 +11,8 @@
               <!-- form start -->
 
               <form  action="{{route('product.store')}}" method="post">
+                @csrf
+                @method("post")
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name of the Product</label>
@@ -28,58 +31,48 @@
                   </div>
                 <!-- /.card-body -->
 
-              
+                <div class="col-sm-2">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Category</label>
+                        <select name="category_id" type="text" class="form-control">
+                        <option >--</option>
+                        @foreach ($categories as $category)
+                          <option >{{$category -> Name}}</option>
+                        @endforeach
+                        </select>
+                      </div>
+                    </div>
 
                 <div class="col-sm-2">
                       <!-- select -->
                       <div class="form-group">
                         <label>Select Brand</label>
                         <select name="brand_id" type="text" class="form-control">
+                          <option >--</option>
                         @foreach ($brands as $brand)
-                          <option>{{$brand -> Name}}</option>
+                          <option >{{$brand -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
                     </div>
 
-                    <div class="col-sm-2">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>Select Category</label>
-                        <select name="category_id" type="text" class="form-control">
-                        @foreach ($categories as $category)
-                          <option>{{$category -> Name}}</option>
-                        @endforeach
-                        </select>
-                      </div>
-                    </div>
+                   
 
                     <div class="col-sm-2">
                       <!-- select -->
                       <div class="form-group">
                         <label>Select Unit</label>
                         <select name="unit_id" type="text" class="form-control">
+                        <option >--</option>
                         @foreach ($units as $unit)
-                          <option>{{$unit -> Name}}</option>
+                          <option >{{$unit -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
                     </div>
 
-                    <div class="col-sm-2">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>Select Vendor</label>
-                        <select name="vendor_id" type="text" class="form-control">
-
-                        <!-- meant to be vendor -->
-                        @foreach ($vendors as $vendor) 
-                          <option>{{$vendor -> CompanyName}}</option>
-                        @endforeach
-                          
-                        </select>
-                      </div>
-                    </div>
+                   
 
                     <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

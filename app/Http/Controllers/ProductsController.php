@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\brand;
-use App\Models\Address;
+use App\Models\Units;
 use App\Models\Category;
-use App\Models\Vendors;
+
 
 class ProductsController extends Controller
 {
@@ -28,10 +28,10 @@ class ProductsController extends Controller
         
         $brands = brand::get();
         $categories = Category::get();
-        $addresses = Address::get();
-        $vendors = Vendors::get();
+        $units = Units::get();
         
-        return view('forms.AddProduct' , ['vendors' => $vendors], ['addresses' => $addresses], ['categories' => $categories], ['brands' => $brands]);
+        
+        return view('forms.AddProduct' , ['brands' => $brands, 'categories' => $categories, 'units' => $units]);
 
     }
 
@@ -47,10 +47,9 @@ class ProductsController extends Controller
             'Name' => 'required|String',
             'Price' => 'required|integer',
             'Quantity' => 'required|integer',
-            'brand_id' => 'required|String',
-            'unit_id' => 'required|integer',
-            'vendor_id' => 'required|String'
-
+            'category_id'=>'required|String|not_in:0',
+            'brand_id' => 'required|String|not_in:0',
+            'unit_id' => 'required|String|not_in:0'
             
             // 'Description' => 'required|String'
         ]);
@@ -86,9 +85,9 @@ class ProductsController extends Controller
             'Name' => 'required|String',
             'Price' => 'required|integer',
             'Quantity' => 'required|integer',
-            'brand_id' => 'required|String',
-            'unit_id' => 'required|integer',
-            'vendor_id' => 'required|String'
+            'category_id'=>'required|String|not_in:0',
+            'brand_id' => 'required|String|not_in:0',
+            'unit_id' => 'required|String|not_in:0'
         ]);     
 
         $Product -> update($data);

@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('Name');
             $table->integer('Price');
             $table->integer('Quantity');
-            $table->unsignedBigInteger('vendor_id')->unique();
             $table->unsignedBigInteger('brand_id')->unique(); 
             $table->unsignedBigInteger('category_id')->unique(); 
             $table->unsignedBigInteger('unit_id');
@@ -43,11 +42,6 @@ class CreateProductsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
-            $table->foreign('vendor_id')
-            ->references('id')
-            ->on('vendors')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');    
         });
     }
 

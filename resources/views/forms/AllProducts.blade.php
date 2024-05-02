@@ -29,8 +29,8 @@
                       <th>Name</th>
                       <th>Price</th>
                       <th>Quantity</th>
+                      <th>Category</th>
                       <th>Brand</th>
-                      <th>Vendor</th>
                       <th>Units</th>
                       <th colspan="2">Action</th>
                     </tr>
@@ -40,11 +40,12 @@
                   @foreach ($products as $product)
                     <tr>
                       <td>{{$product -> id}}</td>
-                      <td>{{$product -> CompanyName}}</td>
-                      <td>{{$product -> Email}}</td>
-                      <td>{{$product -> Number}}</td>
-                      <td>{{$product -> product_id}}</td>
-                      <td>{{$product -> address_id}}</td>
+                      <td>{{$product -> Name}}</td>
+                      <td>{{$product -> Price}}</td>
+                      <td>{{$product -> Quantity}}</td>
+                      <td>{{$product -> category_id}}</td>
+                      <td>{{$product -> brand_id}}</td>
+                      <td>{{$product -> unit_id}}</td>
 
                       <td > <a href="{{route('product.edit', ['product'=>$product])}}"><input type="button" value="Edit"  ></a>  <form action="{{route('product.delete', ['products'=>$product])}}" method="post" class="d-inline">
                 @method('delete')
