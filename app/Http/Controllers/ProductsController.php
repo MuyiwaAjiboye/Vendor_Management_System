@@ -13,7 +13,9 @@ class ProductsController extends Controller
 {
     public function Index()
     {
+
         $products = Products::get();
+      
         return view('forms.AllProducts', ['products' => $products]);
 
     }

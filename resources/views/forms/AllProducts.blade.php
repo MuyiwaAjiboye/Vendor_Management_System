@@ -43,9 +43,9 @@
                       <td>{{$product -> Name}}</td>
                       <td>{{$product -> Price}}</td>
                       <td>{{$product -> Quantity}}</td>
-                      <td>{{$product -> category->Name}}</td>
-                      <td>{{$product -> brands->Name}}</td>
-                      <td>{{$product -> units->Name}}</td>
+                      <td>{{$product -> category->Name}}</td> 
+                      <td>{{$product -> brand->Name}}</td>
+                      <td>{{$product -> unit->Name}}</td> 
 
                       <td > <a href="{{route('product.edit', ['product'=>$product])}}"><input type="button" value="Edit"  ></a>  <form action="{{route('product.delete', ['products'=>$product])}}" method="post" class="d-inline">
                 @method('delete')

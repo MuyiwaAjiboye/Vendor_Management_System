@@ -9,4 +9,7 @@ class Units extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function products(){
+        return $this->hasOne(Product::class);
+    } 
 }
