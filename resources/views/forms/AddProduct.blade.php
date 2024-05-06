@@ -36,9 +36,9 @@
                       <div class="form-group">
                         <label>Select Category</label>
                         <select name="category_id" type="text" class="form-control">
-                        <option >--</option>
+                        <option >--Select--</option>
                         @foreach ($categories as $category)
-                          <option >{{$category -> Name}}</option>
+                          <option value="{{$category -> id}}">{{$category -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
@@ -49,9 +49,9 @@
                       <div class="form-group">
                         <label>Select Brand</label>
                         <select name="brand_id" type="text" class="form-control">
-                          <option >--</option>
+                          <option >--Select--</option>
                         @foreach ($brands as $brand)
-                          <option >{{$brand -> Name}}</option>
+                          <option value="{{$brand -> id}}">{{$brand -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
@@ -66,7 +66,7 @@
                         <select name="unit_id" type="text" class="form-control">
                         <option >--</option>
                         @foreach ($units as $unit)
-                          <option >{{$unit -> Name}}</option>
+                          <option value="{{$unit -> id}}">{{$unit -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
