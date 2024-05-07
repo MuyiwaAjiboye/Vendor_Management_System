@@ -69,9 +69,13 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-     public function Edit(Products $Product)
+     public function Edit(Products $Product )
      {
-         return view('forms.EditProduct', ['product' =>$Product]);
+        $brands = brand::get();
+        $categories = Category::get();
+        $units = Units::get();
+        
+         return view('forms.EditProduct', ['Product' =>$Product,'categories' => $categories, 'brands' => $brands, 'units' => $units ]);
      }
 
     /**
@@ -84,7 +88,7 @@ class ProductsController extends Controller
 
     public function Update(Request $request, Products $Product)
     {
-        //
+        
         $data = $request -> validate([
             'Name' => 'required|String',
             'Price' => 'required|integer',
@@ -93,7 +97,7 @@ class ProductsController extends Controller
             'brand_id' => 'required|String|not_in:0',
             'unit_id' => 'required|String|not_in:0'
         ]);     
-
+        
         $Product -> update($data);
         
         return redirect() -> route('product.index');
