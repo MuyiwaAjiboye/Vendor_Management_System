@@ -86,19 +86,19 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function Update(Request $request, Products $Product)
+    public function Update(Request $request, Products $products)
     {
-        
+        // dd($request);
         $data = $request -> validate([
             'Name' => 'required|String',
             'Price' => 'required|integer',
             'Quantity' => 'required|integer',
-            'category_id'=>'required|String|not_in:0',
-            'brand_id' => 'required|String|not_in:0',
-            'unit_id' => 'required|String|not_in:0'
+            'category_id'=>'required|exists:categories,id',
+            'brand_id' => 'required|exists:brands,id',
+            'unit_id' => 'required|exists:units,id'  
         ]);     
-        
-        $Product -> update($data);
+        // dd($data);
+        $products -> update($data);
         
         return redirect() -> route('product.index');
 
@@ -110,11 +110,12 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function Delete(Products $Product)
+    public function Delete(Products $products)
     {
         //
 
-        $Product -> delete();
+        $products -> delete();
+        
         return redirect() -> route('product.index');
     }
 }

@@ -5,14 +5,14 @@
 <div class="card-header">
 <!-- <div class="card-header"> -->
 <h3 class="card-title">Edit Product</h3>
-              </div>
+</div>
               <!-- /.card-header -->
               <!-- form start -->
 
-              <form  action="{{route('product.update' , ['products' => $Product])}}" method="post">
+              <form  action="{{route('product.update' , ['products' => $Product  ])}}" method="post">
 
               @csrf
-                  @method('put')
+                @method('put')
                 <div class="card-body">
                 
                   <div class="form-group">
@@ -39,7 +39,7 @@
                         <select name="category_id" type="text" class="form-control">
                         <option >{{$Product -> category->Name}}</option>
                         @foreach ($categories as $category)
-                          <option>{{$category -> Name}}</option>
+                          <option value="{{$category -> id}}">{{$category -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
@@ -52,7 +52,7 @@
                         <select name="brand_id" type="text" class="form-control">
                           <option >{{$Product -> brand->Name}}</option>
                         @foreach ($brands as $brand)
-                          <option>{{$brand -> Name}}</option>
+                          <option value="{{$brand -> id}}">{{$brand -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
@@ -65,7 +65,7 @@
                         <select name="unit_id" type="text" class="form-control">
                         <option >{{$Product -> unit->Name}}</option>
                         @foreach ($units as $unit)
-                          <option>{{$unit -> Name}}</option>
+                          <option value="{{$unit -> id}}">{{$unit -> Name}}</option>
                         @endforeach
                         </select>
                       </div>
