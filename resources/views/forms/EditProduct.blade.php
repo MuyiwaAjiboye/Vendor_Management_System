@@ -37,7 +37,7 @@
                       <div class="form-group">
                         <label>Select Category</label>
                         <select name="category_id" type="text" class="form-control">
-                        <option >{{$Product -> category->Name}}</option>
+
                         @foreach ($categories as $category)
                           <option value="{{$category -> id}}">{{$category -> Name}}</option>
                         @endforeach
@@ -50,7 +50,7 @@
                       <div class="form-group">
                         <label>Select Brand</label>
                         <select name="brand_id" type="text" class="form-control">
-                          <option >{{$Product -> brand->Name}}</option>
+
                         @foreach ($brands as $brand)
                           <option value="{{$brand -> id}}">{{$brand -> Name}}</option>
                         @endforeach
@@ -63,7 +63,7 @@
                       <div class="form-group">
                         <label>Select Unit</label>
                         <select name="unit_id" type="text" class="form-control">
-                        <option >{{$Product -> unit->Name}}</option>
+              
                         @foreach ($units as $unit)
                           <option value="{{$unit -> id}}">{{$unit -> Name}}</option>
                         @endforeach
@@ -72,7 +72,7 @@
                     </div>
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Submit</button>
                 </div>
               </form>
             </div>

@@ -69,8 +69,10 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-     public function Edit(Products $Product )
+     public function Edit($id)
      {
+        $Product = Products::find($id);
+
         $brands = brand::get();
         $categories = Category::get();
         $units = Units::get();
@@ -96,11 +98,20 @@ class ProductsController extends Controller
             'category_id'=>'required|exists:categories,id',
             'brand_id' => 'required|exists:brands,id',
             'unit_id' => 'required|exists:units,id'  
-        ]);     
+           
+        ]);  
+        
+        // $updateProduct = $products::where('id', $request->id)->update([
+        //     'Name' => $request ->
+        // ])
+
+
+
+
         // dd($data);
         $products -> update($data);
         
-        return redirect() -> route('product.index');
+        return redirect() -> route('product.index')->with('success', 'Product updated successfully');
 
     }
 
@@ -116,6 +127,17 @@ class ProductsController extends Controller
 
         $products -> delete();
         
-        return redirect() -> route('product.index');
+        return redirect() -> route('product.index')->with('success', 'Product Deleted successfully');
     }
+
+    public function details(Products $product){
+        $brands = brand::get();
+        $categories = Category::get();
+        $units = Units::get();
+     
+        return view('forms.ProductDetails', ['brands' => $brands, 'categories' => $categories, 'units' => $units, 'product' => $product]);
+     
+     }
+
+
 }

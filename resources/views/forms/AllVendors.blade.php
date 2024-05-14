@@ -45,10 +45,10 @@
                       <td>{{$vendor -> product_id}}</td>
                       <td>{{$vendor -> address_id}}</td>
 
-                      <td > <a href="{{route('vendor.edit', ['vendor'=>$vendor])}}"><input type="button" value="Edit"  ></a>  <form action="{{route('vendor.delete', ['vendors'=>$vendor])}}" method="post" class="d-inline">
+                      <td > <a href="{{route('vendor.edit', ['vendor'=>$vendor])}}"><input type="button" value="Edit" class="btn btn-primary" ></a>  <form action="{{route('vendor.delete', ['vendors'=>$vendor])}}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <input type="submit" value="Delete" >
+                <input type="submit" class="btn btn-danger swaldDefaultSuccess" value="Delete" >
             </form></td>
 
                      

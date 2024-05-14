@@ -25,6 +25,19 @@
   <link rel="stylesheet" href="{{asset('Assets/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('Assets/plugins/summernote/summernote-bs4.min.css')}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset('Assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Assets/plugins/toastr/toastr.min.css')}}">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+
+<!-- DataTables -->
+<link rel="stylesheet" href="{{asset('Assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
