@@ -39,6 +39,7 @@ Route::get('/editProduct/{id}', [ProductsController::class, 'Edit'])->name('prod
 Route::put('/updateProduct/{products}', [ProductsController::class, 'Update'])->name('product.update');
 Route::delete('/deleteProduct/{products}', [ProductsController::class, 'Delete'])->name('product.delete');
 Route::get('/product/{product}/details', [ProductsController::class, 'Details'])->name('product.details');
+
 // unit route
 Route::get('/units', [UnitController::class, 'Index'])->name('unit.index');
 Route::get('/createUnitPage', [UnitController::class, 'Create'])->name('unit.create');
@@ -46,6 +47,7 @@ Route::post('/createNewUnit', [UnitController::class, 'Store'])->name('unit.stor
 Route::get('/editUnit/{units}', [UnitController::class, 'Edit'])->name('unit.edit');
 Route::put('/updateUnit/{units}', [UnitController::class, 'Update'])->name('unit.update');
 Route::delete('/deleteUnit/{units}', [UnitController::class, 'Delete'])->name('unit.delete');
+Route::get('/unit/{unit}/details', [UnitController::class, 'Details'])->name('unit.details');
 
 // Brand route
 Route::get('/brand', [BrandController::class, 'Index'])->name('brand.index');
@@ -54,6 +56,7 @@ Route::post('/createNewBrand', [BrandController::class, 'Store'])->name('brand.s
 Route::get('/editBrand/{brand}', [BrandController::class, 'Edit'])->name('brand.edit');
 Route::put('/updateBrand/{brands}', [BrandController::class, 'Update'])->name('brand.update');
 Route::delete('/deleteBrand/{brands}', [BrandController::class, 'Delete'])->name('brand.delete');
+Route::get('/brand/{brand}/details', [BrandController::class, 'Details'])->name('brand.details');
 
 // Category route
 Route::get('/category', [CategoryController::class, 'Index'])->name('category.index');
@@ -62,6 +65,7 @@ Route::post('/createNewCategory', [CategoryController::class, 'Store'])->name('c
 Route::get('/editCategory/{category}', [CategoryController::class, 'Edit'])->name('category.edit');
 Route::put('/updateCategory/{categories}', [CategoryController::class, 'Update'])->name('category.update');
 Route::delete('/deleteCategory/{categories}', [CategoryController::class, 'Delete'])->name('category.delete');
+Route::get('/category/{category}/details', [CategoryController::class, 'Details'])->name('category.details');
 
 // Address route
 Route::get('/address', [AddressController::class, 'Index'])->name('address.index');
@@ -70,6 +74,7 @@ Route::post('/createNewaddress', [AddressController::class, 'Store'])->name('add
 Route::get('/editAddress/{address}', [AddressController::class, 'Edit'])->name('address.edit');
 Route::put('/updateAddress/{addresses}', [AddressController::class, 'Update'])->name('address.update');
 Route::delete('/deleteAddress/{addresses}', [AddressController::class, 'Delete'])->name('address.delete');
+Route::get('/address/{address}/details', [AddressController::class, 'Details'])->name('address.details');
 
 // Vendor route 
 Route::get('/vendor', [VendorController::class, 'Index'])->name('vendor.index');
@@ -78,6 +83,7 @@ Route::post('/createNewVendor', [VendorController::class, 'Store'])->name('vendo
 Route::get('/editVendor/{vendor}', [VendorController::class, 'Edit'])->name('vendor.edit');
 Route::put('/updateVendor/{vendors}', [VendorController::class, 'Update'])->name('vendor.update');
 Route::delete('/deleteVendor/{vendors}', [VendorController::class, 'Delete'])->name('vendor.delete');
+Route::get('/vendor/{vendor}/details', [VendorController::class, 'Details'])->name('vendor.details');
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

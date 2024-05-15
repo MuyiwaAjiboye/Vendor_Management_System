@@ -34,9 +34,9 @@
                   </thead>
                   <tbody>
                     
-                  @foreach ($addresses as $address)
+                  @foreach ($addresses as $key => $address)
                     <tr>
-                      <td>{{$address -> id}}</td>
+                      <td>{{$key+1}}</td>
                       <td>{{$address -> Address}}</td>
                       <td>{{$address -> State}}</td>
                       <td>{{$address -> City}}</td>
@@ -44,7 +44,7 @@
                       <td > <a href="{{route('address.edit', ['address'=>$address])}}"><input type="button" value="Edit"  ></a>  <form action="{{route('address.delete', ['addresses'=>$address])}}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <input type="submit" value="Delete" >
+                <input type="submit" class="btn btn-danger swaldDefaultSuccess deletePopup" value="Delete" >
             </form></td>
 
                      

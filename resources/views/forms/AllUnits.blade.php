@@ -33,9 +33,9 @@
                   </thead>
                   <tbody>
                     
-                  @foreach ($units as $unit)
+                  @foreach ($units as $key => $unit)
                     <tr>
-                      <td>{{$unit -> id}}</td>
+                      <td>{{$key+1}}</td>
                       <td>{{$unit -> Name}}</td>
                       <td>{{$unit -> Status}}</td>
                       <td>{{$unit -> Description}}</td>
@@ -43,7 +43,7 @@
                       <td > <a href="{{route('unit.edit', ['units'=>$unit])}}"><input type="button" value="Edit" class="d-inline"></a>  <form action="{{route('unit.delete', ['units'=>$unit])}}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <input type="submit" value="Delete" >
+                <input type="submit" class="btn btn-danger swaldDefaultSuccess deletePopup" value="Delete" >
             </form></td>
 
                      

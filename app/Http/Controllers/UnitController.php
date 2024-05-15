@@ -87,7 +87,7 @@ class UnitController extends Controller
 
         $units -> update($data);
         
-        return redirect() -> route('unit.index');
+        return redirect() -> route('unit.index')->with('success', 'Unit updated successfully');
 
     }
 
@@ -102,6 +102,6 @@ class UnitController extends Controller
         //
 
         $units -> delete();
-        return redirect() -> route('unit.index');
+        return redirect() -> route('unit.index')->with('success', 'Unit Deleted successfully');
     }
 }

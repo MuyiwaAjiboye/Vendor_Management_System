@@ -32,16 +32,16 @@
                   </thead>
                   <tbody>
                     
-                  @foreach ($categories as $category)
+                  @foreach ($categories as $key => $category)
                     <tr>
-                      <td>{{$category -> id}}</td>
+                      <td>{{$key+1}}</td>
                       <td>{{$category -> Name}}</td>
                       <td>{{$category -> Description}}</td>
 
                       <td > <a href="{{route('category.edit', ['category'=>$category])}}"><input type="button" value="Edit"  ></a>  <form action="{{route('category.delete', ['categories'=>$category])}}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <input type="submit" value="Delete" >
+                <input type="submit"  class="btn btn-danger swaldDefaultSuccess deletePopup" value="Delete" >
             </form></td>
 
                      

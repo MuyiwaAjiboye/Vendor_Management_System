@@ -52,7 +52,7 @@ class VendorController extends Controller
         ]);
 
         $CreateNew = Vendor::Create($data);
-        return redirect()->route('vendor.index');
+        return redirect()->route('vendor.index')->with('success', 'Vendor updated successfully');
     }
 
     /**
@@ -104,6 +104,6 @@ class VendorController extends Controller
         //
 
         $vendors -> delete();
-        return redirect() -> route('vendor.index');
+        return redirect() -> route('vendor.index')->with('success', 'Vendor Deleted successfully');
     }
 }

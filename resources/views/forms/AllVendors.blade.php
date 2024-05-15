@@ -36,9 +36,9 @@
                   </thead>
                   <tbody>
                     
-                  @foreach ($vendors as $vendor)
+                  @foreach ($vendors as  $key => $vendor)
                     <tr>
-                      <td>{{$vendor -> id}}</td>
+                      <td>{{$key+1}}</td>
                       <td>{{$vendor -> CompanyName}}</td>
                       <td>{{$vendor -> Email}}</td>
                       <td>{{$vendor -> Number}}</td>
@@ -48,7 +48,7 @@
                       <td > <a href="{{route('vendor.edit', ['vendor'=>$vendor])}}"><input type="button" value="Edit" class="btn btn-primary" ></a>  <form action="{{route('vendor.delete', ['vendors'=>$vendor])}}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
-                <input type="submit" class="btn btn-danger swaldDefaultSuccess" value="Delete" >
+                <input type="submit" class="btn btn-danger swaldDefaultSuccess" class="btn btn-danger swaldDefaultSuccess deletePopup" value="Delete" >
             </form></td>
 
                      

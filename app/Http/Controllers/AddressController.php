@@ -78,7 +78,7 @@ class AddressController extends Controller
 
         $addresses -> update($data);
         
-        return redirect() -> route('address.index');
+        return redirect() -> route('address.index')->with('success', 'Address updated successfully');
 
     }
 
@@ -93,6 +93,6 @@ class AddressController extends Controller
         //
 
         $addresses -> delete();
-        return redirect() -> route('address.index');
+        return redirect() -> route('address.index')->with('success', 'Address Deleted successfully');
     }
 }

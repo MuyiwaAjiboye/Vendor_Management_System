@@ -101,9 +101,7 @@ class ProductsController extends Controller
            
         ]);  
         
-        // $updateProduct = $products::where('id', $request->id)->update([
-        //     'Name' => $request ->
-        // ])
+        
 
 
 
