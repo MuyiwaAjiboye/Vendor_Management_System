@@ -17,7 +17,6 @@ class ProductsController extends Controller
         $products = Products::get();
       
         return view('forms.AllProducts', ['products' => $products]);
-
     }
 
     /**
@@ -72,7 +71,6 @@ class ProductsController extends Controller
      public function Edit($id)
      {
         $Product = Products::find($id);
-
         $brands = brand::get();
         $categories = Category::get();
         $units = Units::get();
@@ -101,11 +99,6 @@ class ProductsController extends Controller
            
         ]);  
         
-        
-
-
-
-
         // dd($data);
         $products -> update($data);
         

@@ -8,7 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\VendorController;
-
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +84,15 @@ Route::get('/editVendor/{vendor}', [VendorController::class, 'Edit'])->name('ven
 Route::put('/updateVendor/{vendors}', [VendorController::class, 'Update'])->name('vendor.update');
 Route::delete('/deleteVendor/{vendors}', [VendorController::class, 'Delete'])->name('vendor.delete');
 Route::get('/vendor/{vendor}/details', [VendorController::class, 'Details'])->name('vendor.details');
+
+//Purchases Route
+Route::get('/purchase', [PurchaseController::class, 'Index'])->name('purchase.index');
+Route::get('/createPurchasePage', [PurchaseController::class, 'Create'])->name('purchase.create');
+Route::post('/createNewPurchase', [PurchaseController::class, 'Store'])->name('purchase.store');
+Route::get('/editPurchase/{purchases}', [PurchaseController::class, 'Edit'])->name('purchase.edit');
+Route::put('/updatePurchase/{purchases}', [PurchaseController::class, 'Update'])->name('purchase.update');
+Route::delete('/deletePurchase/{purchases}', [PurchaseController::class, 'Delete'])->name('purchase.delete');
+Route::get('/purchase/{purchase}/details', [PurchaseController::class, 'Details'])->name('purchase.details');
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
